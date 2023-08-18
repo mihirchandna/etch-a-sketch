@@ -2,14 +2,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const clearBtn = document.getElementById("clear");
     const eraserBtn=document.getElementById("eraser");
     const colorBtn=document.getElementById("BW");
+    const resizeBtn=document.getElementById("resize");
     const grid = document.getElementById('grid');
-    const size=16;
+    let size=16;
 
     let mouseDown = false;
     let currentMode='BW';
 
     document.body.onmousedown = () => (mouseDown = true);
     document.body.onmouseup = () => (mouseDown = false);
+
+    function setupSize()
+    {
+        let aNumber = Number(window.prompt("Enter the New Size", ""));
+        if(aNumber>100)
+        {
+            aNumber=100;
+        }
+        size=aNumber;
+        reloadGrid();
+    }
 
     function setupCurrentMode(newMode)
     {
@@ -51,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     clearBtn.onclick = () => reloadGrid();
     eraserBtn.onclick= () => setupCurrentMode('eraser');
     colorBtn.onclick= () => setupCurrentMode('BW');
+    resizeBtn.onclick= () => setupSize();
     
     setupGrid();
 });
