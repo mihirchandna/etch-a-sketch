@@ -8,8 +8,9 @@ body {
     background-color: var(--background-color);
 }
 
-main {
+.main {
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 20px;
     max-width: 1100px;
@@ -22,6 +23,9 @@ main {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-top: 20px;
+    width: 100%;
+    align-items: center;
 }
 
 button {
@@ -33,8 +37,10 @@ button {
 
 .grid {
     display: grid;
-    width: 500px;
-    height: 500px;
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 1;
     background-color: var(--secondary-light);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: 0 auto;
 }
