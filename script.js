@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         else if(mouseDown && currentMode=='eraser')
         {
-            e.target.style.backgroundColor='#fefefe';
+            e.target.style.backgroundColor='#FFFFFF';
         }
     }
 
